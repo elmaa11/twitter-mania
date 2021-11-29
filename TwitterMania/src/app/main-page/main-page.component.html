@@ -1,0 +1,50 @@
+
+
+<div class="position-relative">
+
+    
+<form class="register-form position-absolute top-0 start-50 translate-middle-x">
+
+    <div class="col text-center container">
+        <p class="h4 mb-4 ">Register here</p>
+    </div>
+    
+    <!-- Name -->
+    <input type="text" id="registerFormName" class="form-control mb-4" placeholder="Name">
+
+    <!-- Surname -->
+    <input type="text" id="registerFormSurname" class="form-control mb-4" placeholder="Surname">
+
+    <!-- Username -->
+    <input type="text" id="registerFormUsername" class="form-control mb-4" placeholder="Username">
+
+    <!-- Email -->
+    <input type="email" id="registerFormEmail" class="form-control mb-4" placeholder="E-mail">
+  
+    <!-- Password -->
+    <input type="password" id="registerFormPassword" class="form-control mb-4" placeholder="Password">
+  
+    <div class="d-flex justify-content-around">
+      <div>
+        <!-- Remember me -->
+        <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+      </div>
+      <div>
+        <!-- Forgot password -->
+        <a href="">Forgot password?</a>
+      </div>
+    </div>
+  
+    <!-- Sign in button -->
+    <div class="col text-center container">
+        <button mdbBtn color="info"  class="my-4 " type="submit" >Sign up</button>
+        <!-- Log in -->
+        <p>
+            Already a member?
+                <a class="link-primary"  (click)="openModal()">Log in</a>
+        
+        </p>
+        
+    </div>
+    
+  </form>

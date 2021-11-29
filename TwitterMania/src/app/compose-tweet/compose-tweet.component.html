@@ -1,0 +1,46 @@
+<app-navigation-bar></app-navigation-bar>
+<div  class="main ">
+    <div class=" d-flex justify-content-center align-items-center container mt-5">
+    <form class="editing-form p-4 mt-5 rounded">
+        <label  class="form-label col-form-label-lg">Compose new tweet!</label>
+        
+        <br>
+        
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Tweet text</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        <label for="" class="form-label">Add pictures</label>
+        
+        <div class="text-center">
+            <input class="form-control" type="file" (change)="onChange($event)">
+            <br>
+            <button (click)="onUpload()" 
+                class="btn btn-outline-secondary btn-sm">
+                Upload
+            </button>
+        </div>
+          
+        <!-- Shareable short link of  uoloaded file -->
+        <div class="container text-center jumbotron"
+            *ngIf="shortLink">
+            <h2> Visit Here</h2>
+            <a href="{{shortLink}}">{{shortLink}}</a>
+        </div>
+          
+        <!--Flag variable is used here-->
+        <div class="container" *ngIf="loading">
+            <h3>Loading ...</h3>
+        </div>
+        
+        <br>
+        <button type="submit" class="btn btn-primary">Tweet</button>
+        <!-- <button  class="btn btn-default pull-right" (click)="allTweets();">Back</button> -->
+      
+    
+    </form>
+    </div>
+</div>
+
+    

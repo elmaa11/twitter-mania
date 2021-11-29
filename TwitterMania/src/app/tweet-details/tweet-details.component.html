@@ -1,0 +1,21 @@
+<app-navigation-bar></app-navigation-bar>
+
+
+<div class=" d-flex justify-content-center align-items-center container">
+<form class="editing-form">
+    <label  class="form-label col-form-label-lg">Edit your tweet</label>
+    
+    <br>
+    <label for="tweetid" class="form-label">Tweet id</label>
+    <input class="form-control" id="tweetid" type="text" value="123"  disabled readonly>
+    <br>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Tweet text</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="d-grid gap-2 d-md-block ">
+      <button type="submit" class="btn btn-primary ">Submit</button>
+      <button type="button" class="btn btn-default btn-outline-secondary pull-right" (click)="allTweets();">Back</button>
+    </div>
+  </form>
+</div>

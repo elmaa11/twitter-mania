@@ -1,0 +1,61 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="/details">
+        <h2 class="me-auto  mb-lg-0">Twitter Mania</h2>
+      </a>
+  
+      <!-- Toggle button -->
+      <button  class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" [class.collapse]="collapsed">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#!">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/compose">Update Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tweets">Recent Tweets</a>
+          </li>
+        
+  
+  
+        </ul>
+        <!-- Left links -->
+        <div class="navbar-nav me-4 text-right">
+          <div ngbDropdown placement="bottom-right" display="dynamic" class="nav-item d-inline-block"   >
+            <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
+              <img
+                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
+                class="rounded-circle"
+                height="30"
+                alt=""
+                loading="lazy"
+              />
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown1">
+              <button ngbDropdownItem href="#" (click)="openProfile();" >My profile</button>
+              <button ngbDropdownItem href="#" (click)="$event.preventDefault()">Settings</button>
+              <button ngbDropdownItem href="#" (click)="logOut();">Log Out</button>
+            </div>
+          </div>
+        </div>
+        
+      
+      </div>
+      
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+    
+  </nav>
+  <!-- Navbar -->

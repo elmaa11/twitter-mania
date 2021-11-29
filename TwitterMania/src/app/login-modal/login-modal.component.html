@@ -1,0 +1,31 @@
+<div >
+  <div class="modal-header">
+    <div class=" text-center container">
+      <p class="h4">Log in</p>
+  </div>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modalRef.close()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form class="">      
+      
+      <!-- Email -->
+      <input type="email" id="registerFormEmail" class="form-control mb-4" placeholder="E-mail">
+    
+      <!-- Password -->
+      <input type="password" id="registerFormPassword" class="form-control mb-4" placeholder="Password">
+    
+    </form>
+
+  </div>
+<div class="modal-footer">
+  <button type="button" mdbBtn  class="btn btn-light" data-bs-dismiss="modal" (click)="modalRef.close()">
+    Close
+  </button>
+  <button type="button" mdbBtn class="btn btn-info">Log in</button>
+</div>
+</div>
