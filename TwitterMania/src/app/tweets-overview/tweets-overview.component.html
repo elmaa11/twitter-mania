@@ -9,42 +9,19 @@
                 <label  class="form-label col-form-label-lg ">Your last tweets</label>
               </div>
               
-              <table id="tweets-table" class="table">
+              <table id="tweets-table" class="table table-striped">
                   <thead>
-                    <tr>
-                      <th scope="col">#</th>
                       <th scope="col">Time</th>
                       <th scope="col">Preview</th>
                       <th scope="col">Action</th>
-                    </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>today</td>
-                      <td>Otto something</td>
-                      <td>
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editTweet();">Edit</button>
-                      
-                          
-                      </td>
+                    <tr *ngFor="let tweet of lastTweets">
+                      <td>{{ tweet.dateTime}}</td>
+                      <td>{{ tweet.textContent}}</td>
+
                     </tr> 
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>23.1.2020.</td>
-                      <td>
-                          <button type="button" class="btn btn-primary">Edit</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>january</td>
-                      <td>Thornton ....</td>
-                      <td>
-                          <button type="button" class="btn btn-primary">Edit</button>
-                      </td>
-                    </tr>
+                    
                   </tbody>
                 </table>
             </div>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ComposeTweetService } from './compose-tweet.service';
+import { ApiService } from '../services/api.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Tweet } from '../interfaces/tweet';
 
 @Component({
   selector: 'app-compose-tweet',
@@ -13,8 +16,15 @@ export class ComposeTweetComponent implements OnInit {
   loading: boolean = false; // Flag variable
   file: File = null; // Variable to store file
 
+  newTweetForm: FormGroup = this.formBuilder.group({
+    textContent: ['', Validators.required],
+  });
+
   collapsed = true;
-  constructor(private composeTweetService: ComposeTweetService) { }
+  constructor(private composeTweetService: ComposeTweetService, private api: ApiService, private formBuilder: FormBuilder) {
+    
+
+   }
 
   ngOnInit(): void {
   }
@@ -40,4 +50,17 @@ onUpload() {
   );
 }
 
+addNewTweet(){
+  const text = new Date();
+  let tweet : Tweet = {
+    userId : 1,
+    textContent : this.newTweetForm.value.textContent,
+    dateTime :  text.toJSON()
+  };
+  console.log(tweet);
+  this.api.PostNewTweet(tweet).subscribe((response) =>{
+    console.log(response);
+    this.newTweetForm.reset();
+  });
+}
 }

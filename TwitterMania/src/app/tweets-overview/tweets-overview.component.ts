@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-tweets-overview',
@@ -11,7 +11,15 @@ import { Router } from '@angular/router';
 
 export class TweetsOverviewComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  lastTweets: any;
+
+  constructor(private router: Router, private api: ApiService) { 
+    this.api.GetLastTweets(1).subscribe(result => {
+      this.lastTweets = result;
+      
+    });
+
+  }
 
   ngOnInit(): void {
   }

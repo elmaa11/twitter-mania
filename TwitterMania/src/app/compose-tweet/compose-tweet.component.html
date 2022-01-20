@@ -1,14 +1,14 @@
 <app-navigation-bar></app-navigation-bar>
 <div  class="main ">
     <div class=" d-flex justify-content-center align-items-center container mt-5">
-    <form class="editing-form p-4 mt-5 rounded">
+    <form [formGroup]="newTweetForm" class="editing-form p-4 mt-5 rounded" (ngSubmit)="addNewTweet()">
         <label  class="form-label col-form-label-lg">Compose new tweet!</label>
         
         <br>
         
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Tweet text</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea formControlName="textContent" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
 
         <label for="" class="form-label">Add pictures</label>
