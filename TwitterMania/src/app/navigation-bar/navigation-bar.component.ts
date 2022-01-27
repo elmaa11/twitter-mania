@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';    
 import { Router } from '@angular/router'
+import { ApiService } from '../services/api.service';
 
 @Component({    
     selector:'app-navigation-bar',    
@@ -8,7 +9,7 @@ import { Router } from '@angular/router'
     }) 
 
 export class NavigationBarComponent{
-    constructor(private router: Router) {}
+    constructor(private router: Router, private api: ApiService) {}
     
     ngOnInit(): void {
     }
@@ -16,10 +17,11 @@ export class NavigationBarComponent{
       this.router.navigateByUrl('/tweets');   
     };
     openProfile= () => {
-      this.router.navigateByUrl('/profile')
+      this.router.navigateByUrl('/profile');
     };
     logOut= () => {
-      this.router.navigateByUrl('/main')
+      this.api.Logout();
+      this.router.navigateByUrl('/main');
     };
 
     collapsed = true;

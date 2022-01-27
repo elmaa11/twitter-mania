@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Tweet } from '../interfaces/tweet';
+import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,11 @@ export class ApiService {
      return this.http.post(`https://localhost:44323/api/tweet/addtweet`, tweet);
    }
 
+   public Login(login: User){
+     return this.http.post('https://localhost:44323/api/login', login);
+   }
 
+   public Logout(){
+     localStorage.removeItem('token');
+   }
 }

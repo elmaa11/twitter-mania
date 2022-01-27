@@ -15,9 +15,11 @@ export class MainPageComponent implements OnInit {
   constructor(private modalService: MdbModalService) { }
   
   openModal() {
-    this.modalRef = this.modalService.open(LoginModalComponent)
+    this.modalRef = this.modalService.open(LoginModalComponent);
   }
   
+  
+
   ngOnInit() {
   }
 

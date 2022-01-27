@@ -1,3 +1,4 @@
+
 <div >
   <div class="modal-header">
     <div class=" text-center container">
@@ -11,21 +12,19 @@
     ></button>
   </div>
   <div class="modal-body">
-    <form class="">      
+    <form class="" [formGroup]="loginForm" (ngSubmit)="onSubmit()">      
       
       <!-- Email -->
-      <input type="email" id="registerFormEmail" class="form-control mb-4" placeholder="E-mail">
+      <input type="email" formControlName="username"  class="form-control mb-4" placeholder="Username">
     
       <!-- Password -->
-      <input type="password" id="registerFormPassword" class="form-control mb-4" placeholder="Password">
-    
+      <input type="password" formControlName="password" class="form-control mb-4" placeholder="Password">
+  
+        
+      <button type="submit"  class="btn btn-info">Log in</button>
+      
     </form>
 
   </div>
-<div class="modal-footer">
-  <button type="button" mdbBtn  class="btn btn-light" data-bs-dismiss="modal" (click)="modalRef.close()">
-    Close
-  </button>
-  <button type="button" mdbBtn class="btn btn-info">Log in</button>
-</div>
+
 </div>

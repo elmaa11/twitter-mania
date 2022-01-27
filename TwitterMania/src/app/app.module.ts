@@ -12,7 +12,7 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from "@angular/material/button";
 import { ComposeTweetComponent } from './compose-tweet/compose-tweet.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -25,6 +25,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import {NavigationBarComponent } from './navigation-bar/navigation-bar.component'
+import { HttpInterceptorInterceptor } from './interceptors/http-interceptor.interceptor';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import {NavigationBarComponent } from './navigation-bar/navigation-bar.component
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}},
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}, NgbActiveModal
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}, NgbActiveModal,
+    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorInterceptor, multi: true}
     
   ],
   bootstrap: [AppComponent]
