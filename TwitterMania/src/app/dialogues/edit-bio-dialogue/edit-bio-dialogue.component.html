@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Edit your bio</h1>
+
+<mat-dialog-content>
+    <form [formGroup]="editBioForm" class=" p-4  rounded" (ngSubmit)="editBio()">
+       
+        <div class="mb-2">
+            <label for="bioText" class="form-label">Your bio text</label>
+            <textarea formControlName="bio" class="form-control" rows="3" id="er">{{ data.text }}</textarea>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+    
+    </form>
+
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>

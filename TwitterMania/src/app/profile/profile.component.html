@@ -8,9 +8,14 @@
           <div class="footer-widget card mb-4">
             <div class="card-body text-center">
               <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-chat/ava3.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-              <h4 class="my-2">{{ user.name }}</h4>
-              <h5 class="my-2">{{ user.bio }}</h5>
+              <h4 class="my-2">{{ user.name }} {{user.surname}}</h4>
               
+              
+              <div class="d-flex justify-content-center mb-2 ">
+                <h5 class="my-2 me-2">{{ user.bio }}</h5>
+                <button type="button" class="btn btn-light btn-sm" (click)="editBio()">Edit bio</button>
+              </div>
+
               <div class="d-flex justify-content-center mb-2 ">
                 <button type="button" class="btn btn-primary btn-sm">Change picture</button>
               </div>

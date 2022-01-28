@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Tweet } from '../interfaces/tweet';
 import { User } from '../interfaces/user';
+import { PatchUser } from '../interfaces/patch-user';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +40,13 @@ export class ApiService {
 
    public GetId(username: string){
      return this.http.get(`https://localhost:44323/api/tweet/userid/${username}`);
+   }
+
+   public GetUserBio(id: number){
+     return this.http.get(`https://localhost:44323/api/tweet/userbio/${id}`, {responseType: 'text'})
+   }
+
+   public EditUserBio(id: number, user: JSON){
+     return this.http.patch(`https://localhost:44323/api/tweet/edituserbio/${id}`, user);
    }
 }
