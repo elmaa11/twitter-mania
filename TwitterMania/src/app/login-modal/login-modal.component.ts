@@ -29,7 +29,6 @@ export class LoginModalComponent implements OnInit {
 
   }
   onSubmit(){
-    console.log(this.loginForm.value);
     this.api.Login(this.loginForm.value).subscribe((response: any) => {
       localStorage.setItem("token", response['token']);
       if (response['token']){

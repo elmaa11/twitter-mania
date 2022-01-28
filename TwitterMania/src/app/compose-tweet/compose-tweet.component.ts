@@ -3,6 +3,8 @@ import { ComposeTweetService } from './compose-tweet.service';
 import { ApiService } from '../services/api.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Tweet } from '../interfaces/tweet';
+import {MatDialog} from '@angular/material/dialog';
+import { AddTweetDialogueComponent } from '../dialogues/add-tweet-dialogue/add-tweet-dialogue.component';
 
 @Component({
   selector: 'app-compose-tweet',
@@ -21,7 +23,8 @@ export class ComposeTweetComponent implements OnInit {
   });
 
   collapsed = true;
-  constructor(private composeTweetService: ComposeTweetService, private api: ApiService, private formBuilder: FormBuilder) {
+  constructor(private composeTweetService: ComposeTweetService, private api: ApiService,
+     private formBuilder: FormBuilder, public dialog: MatDialog) {
     
 
    }
@@ -57,10 +60,13 @@ addNewTweet(){
     textContent : this.newTweetForm.value.textContent,
     dateTime :  text.toJSON()
   };
-  console.log(tweet);
+  //console.log(tweet);
   this.api.PostNewTweet(tweet).subscribe((response) =>{
     console.log(response);
     this.newTweetForm.reset();
+    if (response){
+      this.dialog.open(AddTweetDialogueComponent);
+    }
   });
 }
 }

@@ -32,4 +32,8 @@ export class ApiService {
    public Logout(){
      localStorage.removeItem('token');
    }
+
+   public Register(register: User){
+    return this.http.post('https://localhost:44323/api/tweet/adduser', register);
+   }
 }

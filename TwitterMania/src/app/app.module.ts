@@ -26,6 +26,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import {NavigationBarComponent } from './navigation-bar/navigation-bar.component'
 import { HttpInterceptorInterceptor } from './interceptors/http-interceptor.interceptor';
+import { AddTweetDialogueComponent } from './dialogues/add-tweet-dialogue/add-tweet-dialogue.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { HttpInterceptorInterceptor } from './interceptors/http-interceptor.inte
     MainPageComponent,
     ProfileComponent,
     LoginModalComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    AddTweetDialogueComponent
   ],
   imports: [
     BrowserModule,

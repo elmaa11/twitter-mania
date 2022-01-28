@@ -3,34 +3,34 @@
 <div class="position-relative">
 
     
-<form class="register-form position-absolute top-0 start-50 translate-middle-x">
+<form class="register-form position-absolute top-0 start-50 translate-middle-x" [formGroup]="registerForm"   (ngSubmit)="onSubmit()">
 
     <div class="col text-center container">
         <p class="h4 mb-4 ">Register here</p>
     </div>
-    
     <!-- Name -->
-    <input type="text" id="registerFormName" class="form-control mb-4" placeholder="Name">
+      <input type="text" formControlName="name" class="form-control mb-4" placeholder="Name"  >
+      
 
     <!-- Surname -->
-    <input type="text" id="registerFormSurname" class="form-control mb-4" placeholder="Surname">
+      <input type="text" formControlName="surname" class="form-control mb-4" placeholder="Surname"
+       >
 
     <!-- Username -->
-    <input type="text" id="registerFormUsername" class="form-control mb-4" placeholder="Username">
+      <input type="text" formControlName="username" class="form-control mb-4" placeholder="Username" 
+        >
 
     <!-- Email -->
-    <input type="email" id="registerFormEmail" class="form-control mb-4" placeholder="E-mail">
+      <input type="email" formControlName="email" class="form-control mb-4" placeholder="E-mail" 
+      >
   
     <!-- Password -->
-    <input type="password" id="registerFormPassword" class="form-control mb-4" placeholder="Password">
+    <input type="password" formControlName="password" class="form-control mb-4" placeholder="Password">
   
-    <div class="d-flex justify-content-around">
-      
-    </div>
-  
+
     <!-- Sign in button -->
     <div class="col text-center container">
-        <button mdbBtn color="info"  class="my-4 " type="submit" >Sign up</button>
+        <button mdbBtn color="info" type="submit" class="btn btn-primary my-4 ">Sign up</button>
         <!-- Log in -->
         <p>
             Already a member?
