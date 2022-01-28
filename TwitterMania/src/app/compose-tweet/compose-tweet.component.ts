@@ -56,7 +56,7 @@ onUpload() {
 addNewTweet(){
   const text = new Date();
   let tweet : Tweet = {
-    userId : 1,
+    userId : parseInt(localStorage.getItem('id')),
     textContent : this.newTweetForm.value.textContent,
     dateTime :  text.toJSON()
   };

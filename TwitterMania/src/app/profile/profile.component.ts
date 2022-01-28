@@ -11,7 +11,7 @@ export class ProfileComponent implements OnInit {
   user : any;
   constructor(private api: ApiService) { 
 
-    this.api.GetUser(1).subscribe(result => {
+    this.api.GetUser(parseInt(localStorage.getItem('id'))).subscribe(result => {
       console.log(result);
       this.user = result;
     })

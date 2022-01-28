@@ -36,4 +36,8 @@ export class ApiService {
    public Register(register: User){
     return this.http.post('https://localhost:44323/api/tweet/adduser', register);
    }
+
+   public GetId(username: string){
+     return this.http.get(`https://localhost:44323/api/tweet/userid/${username}`);
+   }
 }

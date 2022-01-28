@@ -14,7 +14,7 @@ export class TweetsOverviewComponent implements OnInit {
   lastTweets: any;
 
   constructor(private router: Router, private api: ApiService) { 
-    this.api.GetLastTweets(1).subscribe(result => {
+    this.api.GetLastTweets(parseInt(localStorage.getItem('id'))).subscribe(result => {
       this.lastTweets = result;
       
     });

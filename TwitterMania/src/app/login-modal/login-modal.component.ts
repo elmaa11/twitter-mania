@@ -31,8 +31,15 @@ export class LoginModalComponent implements OnInit {
   onSubmit(){
     this.api.Login(this.loginForm.value).subscribe((response: any) => {
       localStorage.setItem("token", response['token']);
+
+      
       if (response['token']){
         this.router.navigateByUrl('/tweets');
+
+        this.api.GetId(this.loginForm.value.username).subscribe((response: any) => {
+          localStorage.setItem("id", response);
+        });
+        
         this.modalRef.close();
       }
     });
