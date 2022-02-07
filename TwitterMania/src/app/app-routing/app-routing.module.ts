@@ -8,6 +8,7 @@ import { TweetDetailsComponent } from '../tweet-details/tweet-details.component'
 import { ComposeTweetComponent } from '../compose-tweet/compose-tweet.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { MainPageComponent } from '../main-page/main-page.component';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,8 @@ const routes: Routes = [
   {
     path: 'main',
     component: MainPageComponent
-  }
+  },
+  { path: '**', component: PageNotFoundComponent }
   ];
 
 @NgModule({

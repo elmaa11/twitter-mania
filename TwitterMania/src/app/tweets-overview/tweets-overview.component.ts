@@ -23,7 +23,10 @@ export class TweetsOverviewComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  editTweet=  () => {
+
+  editTweet=  (id: number) => {
+
+    
     this.router.navigateByUrl('/details');
 };
   

@@ -19,7 +19,10 @@
                     <tr *ngFor="let tweet of lastTweets">
                       <td>{{ tweet.dateTime}}</td>
                       <td>{{ tweet.textContent}}</td>
-
+                      <td> 
+                        <button type="button" class="btn btn-primary mx-1" (click)="editTweet(tweet.id)">Edit</button>
+                        <button type="button" class="btn btn-outline-danger mx-1">Delete</button>
+                      </td>
                     </tr> 
                     
                   </tbody>
