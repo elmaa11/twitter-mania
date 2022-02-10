@@ -1,17 +1,19 @@
 <app-navigation-bar></app-navigation-bar>
 
 <div class="main">
-<div class=" d-flex justify-content-center align-items-center container">
-<form class="editing-form">
+<div class=" d-flex justify-content-center align-items-center container" >
+<form class="editing-form p-4" [formGroup]="editTweetForm">
     <label  class="form-label col-form-label-lg">Edit your tweet</label>
     
     <br>
+    <div class="mx-1">
     <label for="tweetid" class="form-label">Tweet id</label>
-    <input class="form-control" id="tweetid" type="text" value="123"  disabled readonly>
+    <input class="form-control" id="tweetid" type="text" value="123"  formControlName="id"  readonly>
+    </div>
     <br>
     <div class="mb-3 mx-1">
         <label for="exampleFormControlTextarea1" class="form-label">Tweet text</label>
-        <textarea class="form-control " id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control " id="exampleFormControlTextarea1" rows="3" formControlName="text"></textarea>
     </div>
     <div class="d-grid gap-2 d-md-block ">
       <button type="submit" class="btn btn-primary mx-1">Submit</button>

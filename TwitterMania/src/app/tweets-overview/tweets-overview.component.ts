@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -24,10 +24,10 @@ export class TweetsOverviewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  editTweet=  (id: number) => {
+  editTweet=  (idd: number, text: string) => {
 
     
-    this.router.navigateByUrl('/details');
+    this.router.navigate(['/details', {textContent: text, id: idd}]);
 };
   
 }
