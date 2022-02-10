@@ -2,7 +2,7 @@
 
 <div class="main">
 <div class=" d-flex justify-content-center align-items-center container" >
-<form class="editing-form p-4" [formGroup]="editTweetForm">
+<form class="editing-form p-4" [formGroup]="editTweetForm" (ngSubmit)="onSubmit()">
     <label  class="form-label col-form-label-lg">Edit your tweet</label>
     
     <br>

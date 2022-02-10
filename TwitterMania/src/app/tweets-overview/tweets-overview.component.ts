@@ -29,5 +29,12 @@ export class TweetsOverviewComponent implements OnInit {
     
     this.router.navigate(['/details', {textContent: text, id: idd}]);
 };
+
+deleteTweet(id: number){
+  this.api.DeleteTweet(id).subscribe((response: any) => {
+    if (!response)
+      location.reload();
+  });
+}
   
 }

@@ -21,7 +21,7 @@
                       <td>{{ tweet.textContent}}</td>
                       <td> 
                         <button type="button" class="btn btn-primary mx-1" (click)="editTweet(tweet.id, tweet.textContent)">Edit</button>
-                        <button type="button" class="btn btn-outline-danger mx-1">Delete</button>
+                        <button type="button" class="btn btn-outline-danger mx-1" (click)="deleteTweet(tweet.id)">Delete</button>
                       </td>
                     </tr> 
                     
@@ -30,5 +30,6 @@
             </div>
               
     </div>
+    
 
 </body>

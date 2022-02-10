@@ -49,4 +49,11 @@ export class ApiService {
    public EditUserBio(id: number, user: JSON){
      return this.http.patch(`https://localhost:44323/api/tweet/edituserbio/${id}`, user);
    }
+
+   public EditTweet(id: number, change: JSON){
+     return this.http.patch(`https://localhost:44323/api/tweet/edittweet/${id}`, change);
+   }
+   public DeleteTweet(id: number){
+     return this.http.delete(`https://localhost:44323/api/tweet/deletetweet/${id}`);
+   }
 }
