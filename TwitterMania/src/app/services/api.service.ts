@@ -32,6 +32,7 @@ export class ApiService {
 
    public Logout(){
      localStorage.removeItem('token');
+     localStorage.removeItem('id');
    }
 
    public Register(register: User){

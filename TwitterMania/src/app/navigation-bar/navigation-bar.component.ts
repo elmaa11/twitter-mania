@@ -21,6 +21,7 @@ export class NavigationBarComponent{
     };
     logOut= () => {
       this.api.Logout();
+      
       this.router.navigateByUrl('/main');
     };
 

@@ -4,7 +4,7 @@ export interface User {
     surname:string;
     email: string;
     role: string;
-    isLogged: boolean;
+    //isLogged: boolean;
 }
 
 export enum UserRole {

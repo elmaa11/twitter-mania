@@ -33,15 +33,20 @@ export class LoginModalComponent implements OnInit {
       localStorage.setItem("token", response['token']);
 
       
-      if (response['token']){
-        this.router.navigateByUrl('/tweets');
+      if (response['token']){        
 
-        this.api.GetId(this.loginForm.value.username).subscribe((response: any) => {
-          localStorage.setItem("id", response);
-        });
-        
+        this.api.GetId(this.loginForm.value.username).subscribe({          
+          next: (v) => {
+          localStorage.setItem("id", JSON.stringify(v));
+        }, 
+        error: (e) => {}, 
+        complete: () => {          
+          this.router.navigateByUrl('/tweets');
+        }
+      });
         this.modalRef.close();
       }
+
     }, err => {
       document.getElementById("errDiv").innerText = "Wrong credentials!"
     });

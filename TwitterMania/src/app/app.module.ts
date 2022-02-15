@@ -29,6 +29,7 @@ import { HttpInterceptorInterceptor } from './interceptors/http-interceptor.inte
 import { AddTweetDialogueComponent } from './dialogues/add-tweet-dialogue/add-tweet-dialogue.component';
 import { EditBioDialogueComponent } from './dialogues/edit-bio-dialogue/edit-bio-dialogue.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EditProfileModalComponent } from './edit-profile-modal/edit-profile-modal.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NavigationBarComponent,
     AddTweetDialogueComponent,
     EditBioDialogueComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EditProfileModalComponent
   ],
   imports: [
     BrowserModule,
