@@ -42,6 +42,8 @@ export class LoginModalComponent implements OnInit {
         
         this.modalRef.close();
       }
+    }, err => {
+      document.getElementById("errDiv").innerText = "Wrong credentials!"
     });
   }
 
