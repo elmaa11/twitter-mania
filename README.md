@@ -1,17 +1,21 @@
 # twitter-mania
-A twitter-like web app (frontend)
+Frontend for web app Twitter Mania
 
 - login
 - register
 - logout
-- tweeting
 - tweet overview
-- editing
+- add/edit/delete tweet
+- edit bio
+- edit profile
 
-accessing your twitter account via app - soon
+
+Backend here -> https://github.com/elmakupusovic/twitter-mania-backend
 
 Full app here -> https://twittermania.netlify.app/
 
 Frontend: Angular 13.0.2
 
 Backend: .NET CORE 5.0
+
+accessing your twitter account via app - soon
